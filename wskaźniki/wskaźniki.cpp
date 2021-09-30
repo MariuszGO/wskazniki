@@ -21,5 +21,9 @@ int main()
 
     cout << "nowa wartosc: " << a;
 
+    a = 40;
+        cout << "nowa wartosc: " << a;
+
+
 }
 
