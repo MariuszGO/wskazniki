@@ -1,28 +1,30 @@
 ﻿#include <iostream>
 using namespace std;
 
+void abc(int* a, int b) {
+	*a += 10;
+	b += 10;
+	cout << "a w funkcji " << *a<<endl;
+	cout << "b w funkcji " << b<<endl;
+	cout << "adres komorki a  w funkcji" << a << endl;
+	cout << "adres komorki b  w funkcji" << &b << endl;
+}
+
+
 int main()
 {
-    int* wsk;
+	int c=10;
+	int d=10;
+	cout << "adres komorki b " << &c << endl;
+	cout << "adres komorki c " << &d << endl;
 
-    int a = 10;
 
-    wsk = &a; //przypisanie adresu komorki pamięci zmiennej a do wskaźnika wsk
-              // &a powoduje podanie adresu komorki pamieci zmiennej a
-    
-    cout << "zmienna wyswietlona przez wskaźnik " << *wsk<<endl; //wyświetenie zawartości
-                // zmiennej a poprzez adres przechowywany we wskaźniku wsk
-    cout << "wyświetlenie adresu przechowywanego w wskaźniku " << wsk<<endl; // !!! jeżeli
-        //chcemy wyświetlic adres to bez gwiazdki
-    cout << "adres komórki pamieci gdzie jest przechowywana zmienna a " << &a << endl; // !!! jeżeli
-        //chcemy wyświetlic adres to bez gwiazdki
 
-    *wsk = 20;
+	abc(&c, d);
 
-    cout << "nowa wartosc: " << a;
+	cout << "c po funkcji " << c<<endl;
+	cout << "d po funkcji " << d<<endl;
 
-    a = 40;
-        cout << "nowa wartosc: " << a;
 
 
 }
