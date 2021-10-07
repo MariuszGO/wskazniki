@@ -1,29 +1,52 @@
-﻿#include <iostream>
+﻿#define n 10
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
-void abc(int* a, int b) {
-	*a += 10;
-	b += 10;
-	cout << "a w funkcji " << *a<<endl;
-	cout << "b w funkcji " << b<<endl;
-	cout << "adres komorki a  w funkcji" << a << endl;
-	cout << "adres komorki b  w funkcji" << &b << endl;
+void losuj(int *t) {
+	srand(time(0));
+	for (int i = 0; i < n; i++) {
+		*(t + i) = rand() % 10;
+	}
+}
+
+void zeruj(int* t) {
+		for (int i = 0; i < n; i++) {
+		*(t + i) = 0;
+	}
+}
+
+void losuj2(int t[n] ) {
+	srand(time(0));
+	for (int i = 0; i < n; i++) {
+		t[i] = rand() % 10;
+	}
+
+}
+
+void wyswietl(int* t) {
+
+	for (int i = 0; i < n; i++) {
+		cout << "[ " << *(t + i) << " ]";
+	}
+
+	cout << endl << endl;
+
 }
 
 
 int main()
 {
-	int c=10;
-	int d=10;
-	cout << "adres komorki b " << &c << endl;
-	cout << "adres komorki c " << &d << endl;
 
+	int tab[n];
+	//cout << tab;
+	
+	zeruj(tab);
+	wyswietl(tab);
+	losuj(tab);
+	wyswietl(tab);
 
-
-	abc(&c, d);
-
-	cout << "c po funkcji " << c<<endl;
-	cout << "d po funkcji " << d<<endl;
 
 
 
